@@ -1,0 +1,2 @@
+10493bda58e4c2696d0f6abf0f58ff90d4e3cbb808b39fb8b9d5f6b9d6d43b6c  Lycoris-1.4.1-preview.3-arm64.apk
+5c6aa7db8e4f14771d0e5aefab4f04e45548b10588dd9592cdb81a48c0f27bfe  update.json
