@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v3-ui-stage8-preview.7",
+  "versionName": "1.4.1-preview.7",
+  "versionCode": 47,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v3-ui-stage8-preview.7/Lycoris-1.4.1-preview.7-arm64.apk",
+    "bytes": 88145467,
+    "sha256": "11527e199c048f371ab9c3fbd95a71109a7346fb57a20a4e0392c3d734b2792e"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v3-ui-stage8-preview.7",
+  "notes": "Miruro의 현재 공개 사이트 주소와 API 연결을 보완하고 기존 작품·회차 ID를 유지했습니다. 재생 전 자막 선택창과 재생 중 자막 패널에서 다른 사이트 한국어 자막 파일 후보를 직접 검색·선택할 수 있습니다. Miruro·애니24에서 같은 작품·정규 회차를 확인하며 현재 재생 사이트는 제외합니다. 파일 선택 시 실제 한국어 본문을 확인하며 자동 교체·영상 소스 전환·음성 기반 자동 싱크는 하지 않습니다. 별도 자막이 없거나 사이트가 차단되면 후보가 없을 수 있습니다. 실제 Miruro 웹 API/HLS 응답과 JVM/빌드/Preview는 검증했으나 Android 실기기 재생·자막 선택·업데이트는 미검증입니다. 기존 앱 ID·서명·사용자 설정·재생/AI/다운로드 엔진을 유지했습니다.",
+  "buildCommit": "bdafbdcd7bcc9cb3d639195c5a615d658fad3728"
+}
