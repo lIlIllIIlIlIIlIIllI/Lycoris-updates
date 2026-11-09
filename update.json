@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v3-ui-stage8-preview.3",
+  "versionName": "1.4.1-preview.3",
+  "versionCode": 43,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v3-ui-stage8-preview.3/Lycoris-1.4.1-preview.3-arm64.apk",
+    "bytes": 97112438,
+    "sha256": "10493bda58e4c2696d0f6abf0f58ff90d4e3cbb808b39fb8b9d5f6b9d6d43b6c"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v3-ui-stage8-preview.3",
+  "notes": "GitHub 로그인 없이 새 버전을 확인하고 앱에서 APK를 다운로드할 수 있습니다. 홈 자동 확인과 설정의 수동 확인을 지원합니다. 다운로드한 파일의 크기·SHA256·패키지·서명·버전을 검사합니다. 기존 분기·요일 편성표와 재생·AI·다운로드 기능은 유지합니다.",
+  "buildCommit": "ced85993a701c44cb29ded908fddddfbed68cf88"
+}
