@@ -1,0 +1,58 @@
+{
+  "source_commit": "dcd67f844cf65185e0d1bb5932395b39fc2a5601",
+  "version_code": 50,
+  "gguf_default": true,
+  "tests": {
+    "tests": 744,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "assets": [
+    {
+      "name": "Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk",
+      "bytes": 111036844,
+      "sha256": "267d9f0494c5c87b62bcad47c7bdbe355a56597de9c8cd48d437cbab2eb1e901",
+      "parts": [
+        "Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk.part01",
+        "Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk.part02",
+        "Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk.part03"
+      ],
+      "sdk": true
+    },
+    {
+      "name": "Lycoris-1.4.1-preview.10-Stage10-arm64.apk",
+      "bytes": 88260363,
+      "sha256": "b3b19cc29dbc25b20e2ec5dcab7e73bdfde8c24f39479fe6b4908014c9932ecd",
+      "parts": [
+        "Lycoris-1.4.1-preview.10-Stage10-arm64.apk.part01",
+        "Lycoris-1.4.1-preview.10-Stage10-arm64.apk.part02"
+      ],
+      "sdk": false
+    },
+    {
+      "name": "Lycoris-Stage10-BUILD-INFO.json",
+      "bytes": 1440,
+      "sha256": "2ef07874ec8c0dba59c27396634060478bf14e16d9ab1d1c599a22118dab2cf6",
+      "parts": [
+        "Lycoris-Stage10-BUILD-INFO.json"
+      ]
+    },
+    {
+      "name": "update.json",
+      "bytes": 1326,
+      "sha256": "8ee238ee3ed08e0c4ec6f7fb4fd22303cab734965dd71742e01446486bd3d81c",
+      "parts": [
+        "update.json"
+      ]
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 410,
+      "sha256": "2659cb0502d4153884d82ec9f0a69430d9becfcccd8f194f1d879818224bb951",
+      "parts": [
+        "SHA256SUMS.txt"
+      ]
+    }
+  ]
+}

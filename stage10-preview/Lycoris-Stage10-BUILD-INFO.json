@@ -1,0 +1,41 @@
+{
+  "version_name": "1.4.1-preview.10",
+  "version_code": 50,
+  "application_id": "com.lilac.anime.enhanced",
+  "namespace": "com.lilac.anime",
+  "source_commit": "dcd67f844cf65185e0d1bb5932395b39fc2a5601",
+  "signer_sha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "gguf_default": true,
+  "jvm": {
+    "tests": 744,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sdk": "LiteRT-LM0.16.0; AI APK only; disabled by default",
+  "normal_apk": {
+    "apk": "Lycoris-1.4.1-preview.10-Stage10-arm64.apk",
+    "bytes": 88260363,
+    "sha256": "b3b19cc29dbc25b20e2ec5dcab7e73bdfde8c24f39479fe6b4908014c9932ecd",
+    "lint": {
+      "Warning": 247,
+      "Hint": 20
+    }
+  },
+  "ai_apk": {
+    "apk": "Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk",
+    "bytes": 111036844,
+    "sha256": "267d9f0494c5c87b62bcad47c7bdbe355a56597de9c8cd48d437cbab2eb1e901",
+    "lint": {
+      "Warning": 249,
+      "Hint": 20
+    }
+  },
+  "android_validation": "UNVERIFIED",
+  "npu": "UNAVAILABLE; no vendor binary/compiled-model pipeline",
+  "ci_url": "https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/42791692271",
+  "cpu_benchmark_environment": "Linux x86_64, not Android; small test model not recommended for Korean subtitle quality",
+  "compose_static_previews": 15,
+  "real_hf_model_download": "PASS pinned revision, real HTTP206 resume, exact SHA256",
+  "old_natives_identical": 18
+}

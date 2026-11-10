@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v3-ai-stage10-preview.10",
+  "versionName": "1.4.1-preview.10",
+  "versionCode": 50,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v3-ai-stage10-preview.10/Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk",
+    "bytes": 111036844,
+    "sha256": "267d9f0494c5c87b62bcad47c7bdbe355a56597de9c8cd48d437cbab2eb1e901"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v3-ai-stage10-preview.10",
+  "notes": "Stage10: 선택형 LiteRT-LM0.16 엔진·모델 검색/가져오기/다운로드·SHA256 검사·GPU→CPU 초기화 대체를 추가했습니다. 기존 GGUF가 기본이며 실험 엔진은 직접 선택해야 합니다. 기존 모델·Runtime·API 키·기록·다운로드·Classic/Glass와 앱 서명을 유지했습니다. 일반/AI 빌드 테스트744개와 lint·서명·실제 Compose15개를 검증했습니다. NPU는 vendor SDK/compiled model 미검증으로 사용 불가입니다. Android 실기기 설치·GPU/AI 동시 재생·성능은 미검증입니다.",
+  "buildCommit": "dcd67f844cf65185e0d1bb5932395b39fc2a5601"
+}
