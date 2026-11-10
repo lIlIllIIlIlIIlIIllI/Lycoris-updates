@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v3-ai-stage10-preview.10",
-  "versionName": "1.4.1-preview.10",
-  "versionCode": 50,
+  "tag": "v1.4.1",
+  "versionName": "1.4.1",
+  "versionCode": 51,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v3-ai-stage10-preview.10/Lycoris-1.4.1-preview.10-Stage10-AI-Experimental-arm64.apk",
-    "bytes": 111036844,
-    "sha256": "267d9f0494c5c87b62bcad47c7bdbe355a56597de9c8cd48d437cbab2eb1e901"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.1/Lycoris-1.4.1-arm64.apk",
+    "bytes": 111053216,
+    "sha256": "59adaf514912c679507c0ee2551a5717f4d4e905b00a804363b70d76a07d1fb9"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v3-ai-stage10-preview.10",
-  "notes": "Stage10: 선택형 LiteRT-LM0.16 엔진·모델 검색/가져오기/다운로드·SHA256 검사·GPU→CPU 초기화 대체를 추가했습니다. 기존 GGUF가 기본이며 실험 엔진은 직접 선택해야 합니다. 기존 모델·Runtime·API 키·기록·다운로드·Classic/Glass와 앱 서명을 유지했습니다. 일반/AI 빌드 테스트744개와 lint·서명·실제 Compose15개를 검증했습니다. NPU는 vendor SDK/compiled model 미검증으로 사용 불가입니다. Android 실기기 설치·GPU/AI 동시 재생·성능은 미검증입니다.",
-  "buildCommit": "dcd67f844cf65185e0d1bb5932395b39fc2a5601"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.1",
+  "notes": "Stage11 통합판: Enhanced APK 하나에 기존 GGUF와 선택형 LiteRT-LM0.16을 포함합니다. 로컬 기본은 GGUF, LiteRT 사용 허용은 기본 OFF입니다. 실험 OFF 시 요청 취소·워커 종료 확인·GGUF 복귀를 추가하고 기존 모델·Runtime·설정은 보존합니다. Classic/Glass 디자인과 업데이트 화면의 용량·속도·취소·검증 안내를 개선했습니다. 765개 JVM 테스트, Debug/Enhanced 빌드, lint 오류0, 실제 Compose71개, 기존 서명·19개 Native 동일성·16KiB 정렬을 확인했습니다. NPU 사용 불가, Android 실기기 재생·GPU·업데이트 설치는 미검증입니다. Figma 초안은 Starter 호출 한도로 최종 정리가 미완료입니다.",
+  "buildCommit": "e2522e142e8b3a65406520c4ad7d4d0a09301350"
 }
