@@ -75,5 +75,7 @@
       ],
       "sdk": null
     }
-  ]
+  ],
+  "draft_release_id": 440480240,
+  "draft_target_commit": "b23e6572e9eb1cb84f5fd1b81d57ce9889af978b"
 }

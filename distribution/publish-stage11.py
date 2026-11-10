@@ -47,12 +47,11 @@ def main():
  assert update['versionCode']==51 and update['certificateSha256']==CERT and update['tag']==TAG
  selected=next(e for e in manifest['assets'] if e['name']==update['apk']['url'].rsplit('/',1)[-1])
  assert selected['sdk'] and selected['sha256']==update['apk']['sha256'] and selected['bytes']==update['apk']['bytes']
- releases=[r for r in api('releases?per_page=100') if r['tag_name']==TAG]
- if not releases:
-  subprocess.run(['gh','release','create',TAG,'--repo',REPO,'--target',os.environ['GITHUB_SHA'],'--draft','--latest=false','--title','Lycoris 1.4.1 · 통합 Enhanced','--notes-file',str(ROOT/'RELEASE_NOTES.md')],check=True)
-  releases=[r for r in api('releases?per_page=100') if r['tag_name']==TAG]
- assert len(releases)==1
- release=api('releases/'+str(releases[0]['id']));assert not release['prerelease']
+ # Pin the exact draft created by this delivery. Listing immediately after creation may be stale;
+ # /releases/tags also excludes unpublished tags. Never create a second release on retry.
+ release=api('releases/'+str(manifest['draft_release_id']))
+ assert release['tag_name']==TAG and not release['prerelease']
+ assert release['target_commitish']==manifest['draft_target_commit']
  for path in files:
   old=next((a for a in release['assets'] if a['name']==path.name),None)
   if old:assert old['size']==path.stat().st_size and old['digest']=='sha256:'+sha(path)
