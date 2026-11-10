@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v1.4.1",
+  "versionName": "1.4.1",
+  "versionCode": 51,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.1/Lycoris-1.4.1-arm64.apk",
+    "bytes": 111053216,
+    "sha256": "59adaf514912c679507c0ee2551a5717f4d4e905b00a804363b70d76a07d1fb9"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.1",
+  "notes": "Stage11 통합판: Enhanced APK 하나에 기존 GGUF와 선택형 LiteRT-LM0.16을 포함합니다. 로컬 기본은 GGUF, LiteRT 사용 허용은 기본 OFF입니다. 실험 OFF 시 요청 취소·워커 종료 확인·GGUF 복귀를 추가하고 기존 모델·Runtime·설정은 보존합니다. Classic/Glass 디자인과 업데이트 화면의 용량·속도·취소·검증 안내를 개선했습니다. 765개 JVM 테스트, Debug/Enhanced 빌드, lint 오류0, 실제 Compose71개, 기존 서명·19개 Native 동일성·16KiB 정렬을 확인했습니다. NPU 사용 불가, Android 실기기 재생·GPU·업데이트 설치는 미검증입니다. Figma 초안은 Starter 호출 한도로 최종 정리가 미완료입니다.",
+  "buildCommit": "e2522e142e8b3a65406520c4ad7d4d0a09301350"
+}

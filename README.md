@@ -4,7 +4,7 @@ Lycoris Android의 **공개 APK 배포 및 업데이트 정보 전용 저장소*
 
 ## 다운로드
 
-**[APK 다운로드 · Releases](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases)** — GitHub 로그인 없이 사용할 수 있습니다. 현재 배포는 검토용 시험판입니다.
+**[APK 다운로드 · Releases](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases)** — GitHub 로그인 없이 사용할 수 있습니다. **최신 정식: [Lycoris 1.4.1 · 통합 Enhanced APK](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.1)**. 일반/AI 별도 APK 없이 하나만 배포합니다. 기존 GGUF 기본, LiteRT-LM 사용 허용은 기본 OFF입니다. Android 실기기 CPU/GPU·재생은 미검증이고 NPU는 비활성화입니다.
 
 - ARM64 Android 8.0(API26) 이상. 기존 Lycoris Enhanced와 같은 앱 ID/서명을 사용합니다.
 - 앱을 삭제하지 말고 APK를 기존 앱 위에 업데이트로 설치하세요.

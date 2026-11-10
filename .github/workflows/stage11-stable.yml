@@ -1,0 +1,23 @@
+name: Publish verified Stage 11 unified stable APK
+on:
+  push:
+    branches: [stage11-stable-delivery]
+    paths: ['stage11-stable/**', '.github/workflows/stage11-stable.yml', 'distribution/publish-stage11.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-stage11-stable-1-4-1
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'lIlIllIIlIlIIlIIllI/Lycoris-updates' && github.ref == 'refs/heads/stage11-stable-delivery'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify signed APK and source checks before new stable release and updater promotion
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 distribution/publish-stage11.py

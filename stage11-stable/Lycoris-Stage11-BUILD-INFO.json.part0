@@ -1,0 +1,42 @@
+{
+  "source_commit": "e2522e142e8b3a65406520c4ad7d4d0a09301350",
+  "version_name": "1.4.1",
+  "version_code": 51,
+  "application_id": "com.lilac.anime.enhanced",
+  "namespace": "com.lilac.anime",
+  "sdk_version": "0.16.0",
+  "apk": "Lycoris-1.4.1-arm64.apk",
+  "bytes": 111053216,
+  "sha256": "59adaf514912c679507c0ee2551a5717f4d4e905b00a804363b70d76a07d1fb9",
+  "signer_sha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "jvm": {
+    "tests": 765,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Warning": 252,
+    "Hint": 20
+  },
+  "stage10_natives_identical": 19,
+  "protected_files_unchanged": 184,
+  "gguf_default": true,
+  "litert_default": "OFF (new opt-in key, no legacy selection deletion)",
+  "source_ci": {
+    "conclusion": "success",
+    "headSha": "e2522e142e8b3a65406520c4ad7d4d0a09301350",
+    "status": "completed",
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/42808694051"
+  },
+  "device_execution": "UNVERIFIED",
+  "npu": "UNAVAILABLE",
+  "figma": {
+    "url": "https://www.figma.com/design/JjHUqsBKnUHjeobZZnN24U",
+    "status": "DRAFT / Starter tool quota blocked bulk text repair and final QA",
+    "phone_frames": 30,
+    "directions": 3,
+    "tablet_figma": "NOT CREATED"
+  },
+  "rendered_compose_previews": 71
+}
