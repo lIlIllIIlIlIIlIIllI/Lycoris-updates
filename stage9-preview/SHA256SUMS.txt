@@ -1,0 +1,3 @@
+89d028d3536727ed4a45eedd32b7df09a767e4a0aaf84dce456c15214113d627  Lycoris-1.4.1-preview.9-Stage9-arm64.apk
+67c2b86636de381b93b9e29d8b7c99b971a3ae94b9d1eca0e7ca216e8c10f173  Lycoris-LocalAI-Stage9-CPU-arm64-0.3.0-preview.1.zip
+b89f177357242d4f0bd225ce9a24ce33267e79b0c153695c6a7f99624ac5b7b6  Lycoris-Stage9-BUILD-INFO.json

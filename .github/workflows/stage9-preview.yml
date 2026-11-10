@@ -1,0 +1,23 @@
+name: Publish verified Stage 9 preview without advancing updates
+on:
+  push:
+    branches: [stage9-preview-delivery]
+    paths: ['stage9-preview/**', '.github/workflows/stage9-preview.yml', 'distribution/publish-stage9.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-stage9-preview9
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'lIlIllIIlIlIIlIIllI/Lycoris-updates' && github.ref == 'refs/heads/stage9-preview-delivery'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify original signed files and publish only the new preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 distribution/publish-stage9.py
