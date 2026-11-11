@@ -2,6 +2,14 @@
 
 Lycoris Android의 **공개 APK 배포 및 업데이트 정보 전용 저장소**입니다. 앱 소스, 사용자 데이터, API 키와 서명 키는 포함하지 않습니다.
 
+## 이번 기기 업데이트 — 모에니 시험판
+
+**[1.4.2-preview.1 / code 52](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.1)**: 설정 → 콘텐츠 / 영상 소스 → **모에니 · 웹 시청**을 선택할 수 있습니다. 목록·한국어 제목 검색·작품 정보·내 목록·월~일 요일표를 제공합니다.
+
+모에니 시청은 **외부 브라우저의 원래 작품 페이지에서 회차를 선택하는 방식**입니다. 앱 내 mpv 재생·다운로드·AI 자막·브라우저 재생 위치 연동은 지원하지 않습니다. 외부 사이트 실제 영상 재생과 Android 실기기 동작은 미검증입니다. 다른 콘텐츠 소스의 기존 기능은 유지합니다.
+
+이번 요청에 따라 앱의 단일 업데이트 채널은 이 프리뷰를 제안합니다. 아래 정식 1.4.1 및 과거 APK는 보존하며 Latest 정식 표시도 유지합니다. 새 버전을 설치한 뒤 낮은 versionCode APK로 되돌리는 것은 Android의 일반 업데이트 경로에서 지원하지 않습니다.
+
 ## 다운로드
 
 **[APK 다운로드 · Releases](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases)** — GitHub 로그인 없이 사용할 수 있습니다. **최신 정식: [Lycoris 1.4.1 · 통합 Enhanced APK](https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.1)**. 일반/AI 별도 APK 없이 하나만 배포합니다. 기존 GGUF 기본, LiteRT-LM 사용 허용은 기본 OFF입니다. Android 실기기 CPU/GPU·재생은 미검증이고 NPU는 비활성화입니다.
