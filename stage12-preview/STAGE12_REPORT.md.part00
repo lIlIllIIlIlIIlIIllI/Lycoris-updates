@@ -1,0 +1,196 @@
+# Lycoris 1.4.2-preview.2 — Stage 12 Cross-Site Library
+
+## A. 기준 및 기존 데이터
+
+- 사용자 기준 `e2522e142e8b3a65406520c4ad7d4d0a09301350` / 정식 1.4.1은 보존합니다.
+- 최신 유효 변경인 모에니 프리뷰를 포함한 `44a4584b80fb7b2b8aa09cfa90c4db6fb01a9952`에서 `lycoris-stage12-cross-site-library` 브랜치를 생성했습니다.
+- **code52는 1.4.2-preview.1로 이미 배포**되어 새 버전은 **1.4.2-preview.2 / code53**을 사용합니다. 앱 ID·namespace·기존 서명을 유지합니다.
+- `Anime.id`: Linkani는 사이트 고유 ID, 그 외 `reanime:`, `animenosub:`, `miruro:`, `ohli24:`, `paradise:`, `moeni:` 이름 공간을 사용합니다. `Anime.source`는 원작 종류 등 메타데이터이며 사이트 식별자로 사용하지 않습니다.
+- `lilac_offline_store` SharedPreferences의 `saved_library`(사이트 ID 집합), `saved_watch_history`(animeId/episodeNumber/episodeKey/progress)를 그대로 유지합니다.
+- 기존 스냅샷은 제목·외부 ID·이미지 등 일부 정보만 저장합니다. 연도·시즌·형식을 추가 검증하려면 현재 상세 정보나 새 통합 스냅샷이 필요합니다.
+- 기존 재생 위치 복원은 대상 사이트/회차 키의 진행률을 해당 영상 길이에 적용합니다. mpv/PlayerScreen의 이 동작과 원본 기록은 수정하지 않습니다.
+
+## B. 공통 작품 식별
+
+`CrossSitePolicy`, `CrossSiteIndex`를 별도 조회 계층으로 추가했습니다.
+
+1. 공급자 API의 양수 AniList/MAL ID 일치와 제목 또는 연도/형식의 교차 근거가 있어야 자동 연결합니다.
+2. ID·연도·분기·시즌 번호·형식·분할 파트·특별편 충돌은 보류합니다. 제목만 일치하면 **후보**이며 자동 연결하지 않습니다.
+3. **Linkani와 AnimeParadise의 AniList ID에는 포스터 파일명에서 추정된 값이 포함**되어, 이 두 소스의 AniList 값만으로 자동 연결하지 않습니다. 사용자의 공식 ID 검증 또는 직접 확인이 필요합니다. Paradise의 명시적 MAL 매핑은 별도 근거로 검사합니다.
+4. 공식 AniList 교차 참조 기능은 **사용자 버튼 요청 시에만** ID·MAL·원제·연도·형식을 검사합니다. 응답의 ID/제목/형식 불일치나 오류는 거절합니다. 현재 환경의 실제 호출은 **Cloudflare HTTP403**으로 차단되어 실서비스 실행 성공을 주장하지 않습니다. fixture 기반 경로는 자동 테스트합니다.
+5. 자동 간접 연결(A↔B↔C)도 클러스터 전체의 ID 충돌·해제 차단과 사이트 중복 등록을 검사합니다. 잘못된 연결을 해제하면 우회 경로로 다시 합쳐지지 않습니다. 같은 공급자에 하나의 외부 ID로 여러 작품 등록이 있으면 임의의 첫 후보를 자동 연결하지 않고 해당 공급자의 직접 확인을 요청합니다.
+6. 메타데이터가 부족한 후보는 사용자가 같은 작품/시즌인지 확인한 뒤 직접 연결할 수 있습니다. 명백한 ID/시즌/형식 충돌은 수동 확인만으로 강제 덮어쓰지 않습니다.
+
+공통 ID는 **정렬된 사이트 ID 집합을 길이 구분하여 SHA256으로 식별**합니다. 연결/분리로 집합이 달라지면 공통 뷰 ID도 달라집니다. 원본 ID·사용자 선택·원본 진행률은 이 공통 ID로 치환하지 않으므로 연결 변경으로 데이터가 유실되지 않습니다.
+
+## C. 매핑과 신뢰도
+
+`files/cross-site/library-v1.json`에 별도 버전·SHA256 envelope·원자 쓰기(AtomicFile)로 보관합니다.
+
+- 전체 메타데이터 스냅샷(시즌/원제/형식 등), 공통 ID와 `SourceAnimeRef` 목록, 연결 근거·신뢰도, 수동 확인 여부, 연결 해제 차단
+- 공식 ID 검증 fingerprint, 사이트별 최근 조회 결과와 검색어, 통합 찜 선택·통합 숨김, 새 체크포인트 시각
+- 신뢰도: `SOURCE_ONLY`, `PROVIDER_CORROBORATED`, `OFFICIAL_REFERENCE_AND_PROVIDER`, `USER_CONFIRMED`. 공급자 메타데이터 일치를 공식 DB 독립 검증이나 100% 동일 작품 보증으로 표현하지 않습니다.
+- 회차 미디어 URL/자막 URL/쿠키/API 키는 새 스냅샷에 저장하지 않습니다. 회차 배열은 제거하고 재생 시 기존 저장소/API에서 읽습니다.
+
+| 소스 | 자동 근거/제약 | 다른 사이트 이어보기 |
+|---|---|---|
+| Linkani | 추정 AniList는 자동 근거에서 제외, 공식 확인/수동 연결 | 실제 회차 조회 후 후보 확인 |
+| Animenosub | 원제/제목 후보 및 직접 연결 중심, 인증 차단 구분 | 인증·실제 회차가 확인될 때만 |
+| RE:Anime | 명시적 AniList/MAL + 메타데이터 | 기존 플레이어 경로 |
+| Miruro | 명시적 external_ids + 메타데이터, 차단 시 오류 표시 | 사이트 조회가 성공한 경우에만 |
+| 애니24 | 메타데이터/제목 후보 및 직접 연결 중심 | 실제 회차 조회 후 후보 확인 |
+| AnimeParadise | 명시적 MAL 또는 공식 확인/직접 연결, 추정 AniList 제외 | 실제 회차 조회 후 후보 확인 |
+| 모에니(기존 프리뷰 보존) | 웹 시청 소스·목록/찜 연결 가능 | 앱 내 회차/재생 위치를 제공하지 않아 비교 재생 제외 |
+
+## D. 통합 찜
+
+- 같은 공통 작품은 한 행과 통합 개수로 표시합니다. 다른 사이트의 하트도 검증된/확인된 연결에 따라 반영합니다.
+- 신규 찜 추가는 통합 선택과 **사용자가 선택한 원본 사이트 ID 한 개의 찜 추가**를 함께 처리합니다. 기존 동기화에서도 그 원본 추가를 유지합니다.
+- **통합 찜 해제는 별도 선택 상태로 숨김 처리**하며 원본 `saved_library` 항목을 대량 삭제하지 않습니다.
+- 통합 찜을 끄면 원본 사이트별 하트 동작으로 돌아갑니다. 설정의 ‘통합 숨김·찜 선택 복원’으로 원본 기준 표시를 복원할 수 있습니다.
+- 작품 스냅샷이 없어도 원본 ID를 유지하는 안내 행을 표시합니다. ID를 제목처럼 노출하거나 가짜 작품 메타데이터로 연결하지 않습니다.
+
+## E. 통합 시청 기록
+
+- 전체 사이트/사이트별 필터, 동일 작품 중복 통합, 마지막 원본 순서의 회차·진행률·사이트, 펼쳐보는 사이트별 원본 회차 기록을 제공합니다.
+- `episodeKey`, `episodeNumber`, `progress`와 각 사이트의 모든 회차 기록을 그대로 유지합니다. 가장 큰 진행률을 마지막 시청으로 오인하지 않습니다.
+- 과거 시청 날짜는 생성하지 않습니다. 이전 기록은 ‘날짜 미확인/저장된 순서’로 표시하고, 신규 기록 시각은 이 기기의 새 체크포인트부터 별도 수집합니다(30초 간격 제한). 통합 기록을 끄면 새 추가 시각 수집도 멈춥니다.
+- ‘통합 기록에서 숨기기’는 확인 대화상자 뒤 표시만 숨깁니다. 원본 기록·실제 시청 시간·다운로드는 삭제하지 않습니다. 원본 모드의 기존 삭제 동작은 그대로 유지합니다.
+
+## F. 다른 사이트 이어보기
+
+- 작품 상세의 연결 관리, 통합 보관함·기록, 홈의 사이트 간 이어보기에서 접근합니다.
+- 사이트를 선택할 때 실제 사이트 설정 전환 완료를 기다리고, 원래 사이트 ID/회차 ID/상세 URL로 기존 Detail/Player 경로에 진입합니다.
+- 이전 화면/요청의 지연 콜백은 요청 token·사이트·백스택 entry ID로 거절합니다.
+- 소스 전환 중 늦은 홈/카탈로그 응답이 현재 소스를 덮어쓰는 문제를 막기 위해 ViewModel에 세대 검사와 전환 완료 대기를 보강했습니다. 기존 설정 저장 writer와 preference key는 유지합니다.
+
+## G. 회차 대응·진행률 보호
+
+- 실제 원본 회차 목록에서 기록의 episodeKey를 확인한 뒤, 같은 작품의 일반 TV 회차 표기와 유일한 대상 후보를 비교합니다.
+- `4`/`4a`, 분수/분할 회차, OVA/극장판/총집편, 중복 번호, 원본 회차 메타데이터 미확인은 자동 대응하지 않습니다. 기존 숫자 키도 실제 회차 목록에서 유일하게 확인되어야 합니다.
+- 후보는 사용자 확인 후 재생합니다. **원본 사이트의 진행률 비율·초 단위 위치를 다른 사이트에 복사하지 않습니다.** 대상 사이트에 자체 기록이 있으면 기존 플레이어가 그 위치를 복원하고 없으면 처음부터 재생합니다.
+- 대응 불가 시 원본 기록을 유지하고 대상 작품 상세에서 직접 선택하도록 안내합니다. 실제 영상 길이/OP·ED 편집 동일성을 검증했다고 주장하지 않습니다.
+
+## H. UI/UX
+
+Classic/Glass 디자인 토큰·기존 PosterRow/BackdropCard/Panel/상태/버튼을 재사용합니다. 기존 보관함 3탭과 다운로드 동작은 유지합니다. 새로운 기능 설정은 ‘사이트 간 데이터 통합’에서 각각 켜고 끌 수 있습니다. 직접 연결 목록과 해제, 통합 숨김 복원, 보호 상태, 통합 작품 수·원본 실제 시청 시간 요약을 제공합니다. Figma는 추가 호출하지 않았으며 완료했다고 표시하지 않습니다. 실제 Compose Preview 결과는 검증 후 갤러리에 기록합니다.
+
+## I. 추천·시청 통계
+
+- `RecommendationPolicy.identity()`의 기존 외부 ID 방식은 유지하고, 별도 canonical identity 조회 맵을 rank에 전달합니다. 같은 작품의 여러 사이트 찜·기록·최근 신호를 중복 가산하지 않습니다.
+- 실제 시청 시간 이벤트를 삭제하거나 합쳐서 덮어쓰지 않습니다. 추천 선호 신호에는 작품별 가장 강한 사이트의 시간 신호를 사용하며, 원본 실제 시청 총합은 유지합니다.
+- 추천 제외 장르·관심 없음·초기화 기준은 유지합니다. 통합 화면에서 숨긴 시청 기록은 원본을 삭제한 것이 아니므로 기존 통계/추천의 원본 이벤트를 삭제하지 않습니다.
+- 정확한 회차 대응을 확인하지 못한 완료 회차는 합쳐서 추정하지 않으며, 사이트별 완료 회차 수를 유지합니다.
+
+## J. 마이그레이션·롤백·기기 동기화
+
+- 기존 저장 모델/스키마를 변경하지 않고 원본을 읽어 추가 인덱스를 구성합니다. 저장소 원본 파일과 키를 새 포맷으로 덮어쓰지 않습니다.
+- JSON 손상·알 수 없는 버전·체크섬 불일치·쓰기 실패·용량 한도는 원본 모드로 복귀합니다. 실패한 변경은 메모리의 이전 상태/기존 파일을 유지합니다.
+- 명시적인 ‘통합 인덱스만 초기화’ 확인은 통합 연결/추가 시각/표시 선택만 초기화하고, 손상 파일은 별도 보존합니다. 원본 키·다운로드·API 키·Runtime·모델은 초기화하지 않습니다.
+- 기존 `DeviceSyncClient` 프로토콜은 변경하지 않습니다. 원본 사이트 ID와 episodeKey를 내보내며 새 canonical ID로 바꾸지 않습니다. 새 연결/숨김/선택/추가 시각은 **현재 기기 로컬 전용**이며 다른 기기에 자동 동기화되지 않습니다.
+- 외부 애니 사이트 사용자 계정에는 찜/기록을 기록하지 않습니다.
+
+## K. 자동 검증
+
+이전 모에니 프리뷰까지 기존 JVM 788개(정식 Stage11의 765개 포함)를 보존합니다. 추가 테스트는 ID/형식/시즌/간접 충돌, 원본 찜/키/시각 보존, 쓰기 실패·손상 복귀, 연결 해제, 검색 캐시/동시2개/취소/timeout/차단, 기기 동기화 원본 형식, 공식 ID 응답 검증, 추천 중복 방지를 다룹니다.
+
+개발 중 누락된 import와 Android JSONObject의 `keySet` 호환 문제를 확인해 수정했습니다. 기존 저장소의 일부 검색·상세 분기가 blocking HTTP를 사용한다는 점을 대조하여, 새 UI의 해당 호출은 모두 명시적인 IO dispatcher에서 실행하도록 보강했고 dispatcher 테스트를 추가했습니다. 최종 수치/빌드/lint/서명/실제 Preview/CI 결과는 완료한 검사만 후속 기록합니다.
+
+## L. 기존 기능 보호
+
+PlayerScreen/mpv/AndroidView/TextureView, AI 번역·Runtime·JNI·자막·캐시, 오프라인 저장 구조, 다운로드 엔진, 기기 동기화 클라이언트는 수정하지 않았습니다. 보호 파일과 네이티브 SHA256은 최종 검증 스크립트에서 비교합니다. ViewModel 변경은 추가 인덱스 관찰·원본 찜 추가·추가 기록 시각·소스 전환 안정화·메모리 회차 캐시에 한정합니다.
+
+## M. 미검증 및 제한
+
+- 실기기 설치/기존 앱 업데이트·PiP·AI/재생 동시 동작·브라우저 인증·실제 사이트 간 재생·성능은 미검증입니다.
+- 공식 AniList 호출은 현재 환경에서 Cloudflare403입니다. 공식 교차 참조를 성공했다고 보고하지 않습니다. 공급자/직접 확인 경로를 유지합니다.
+- 차단/서버 장애와 검색 결과 없음을 구분합니다. 현재 모든 사이트가 실제로 재생 가능하다고 표시하지 않습니다.
+- 코루틴 timeout은 30초, 동시 조회는 2개, 상세 후보는 사이트당 최대3개입니다. 기존 일부 공급자의 blocking IO는 자체 timeout까지 반환이 늦을 수 있습니다. 취소된 조회의 결과는 저장/네비게이션에 반영하지 않습니다. Animenosub 교차 조회에는 기존 파서·쿠키 세션을 재사용하는 별도 취소 가능/재시도 없는 HTTP 경로를 사용합니다.
+- 자동 매칭은 보수적이며 시즌/형식 정보가 부족한 후보를 직접 확인해야 할 수 있습니다. 잘못된 공급자 ID/메타데이터의 완전한 정합성을 보장하지 않습니다.
+- 신규 스냅샷 최대2,000개/체크포인트2,000개/조회 기록300개/4MiB 한도입니다. 넘으면 원본 데이터는 보존하고 통합 쓰기를 중단하며 보호 상태를 안내합니다.
+- TV 전용 전체 화면의 통합 재배치는 이번 범위에 포함하지 않았습니다. 휴대폰/태블릿 UI와 공통 데이터 계층을 구현합니다.
+
+## N. 변경 파일
+
+최종 소스 기준 파일 목록과 기능별 변경 범위는 구현 커밋 이후 검증 기록에 추가합니다.
+
+## O. GitHub·APK
+
+브랜치 `lycoris-stage12-cross-site-library`, 파일 `Lycoris-1.4.2-preview.2-arm64.apk`, 태그 `v1.4.2-preview.2`의 새 Pre-release를 사용합니다. 테스트/호환성 안전 조건 통과 전에 배포하지 않습니다. 기존 정식 v1.4.1과 모에니 Preview.1을 보존합니다.
+
+## P. 앱 내 업데이트
+
+현재 별도 안정/시험판 채널 분리가 없는 공개 `Lycoris-updates/main/update.json`을 사용합니다. 사용자 요청에 따라 검증된 Preview.2(code53)를 기존 공개 경로에 반영하고 정식 Release의 Latest는 v1.4.1로 유지할 예정입니다. 공개 다운로드 전체 SHA256과 실제 앱의 컴파일된 업데이트 정책을 게시 JSON에 적용한 결과를 후속 기록합니다.
+
+## Q. 후속 개선
+
+공식 메타데이터 접근성·공급자 ID provenance 확장, 사용자 확인 회차 대응의 별도 저장, 추가 인덱스의 선택적 기기 동기화(기존 프로토콜과 분리), 대형 기록의 성능 계측, TV 전용 통합 화면을 후속 범위로 남깁니다. 이번 배포에서 실제 기기 검증 완료로 표시하지 않습니다.
+
+## 최종 로컬·CI 검증 기록 (2026-11-11)
+
+| 검사 | 실제 결과 |
+|---|---|
+| JVM | **885개 성공 / 실패0 / 오류0 / 생략0**. 기존788개 원문 유지 + 신규97개 |
+| Debug / Enhanced | 둘 다 빌드 성공, 동일 최종 Android 소스 |
+| Enhanced Lint | Error/Fatal0, Warning254, Hint20. 이전 Warning253 대비 UI Composable 명명 경고1개 추가; 숨기지 않음 |
+| 원격 CI | [42980903060](https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/42980903060) success, head `e2caa16d516a60de1144827ca5cc1bcf6c8cfcc9` |
+| Compose | 실제 Layoutlib fixture8개 렌더 성공 및 육안 검토; [갤러리](design-v3-stage12/README.md). 실기기 캡처 아님 |
+| 원본 보호 | 기존 테스트 파일·보호 엔진/데이터 파일190개 byte 비교 일치; 별도 허용된 ViewModel/추천 UI 변경은 보고서에 명시 |
+| Native | ARM64 `.so`19개 모두 Preview.1과 SHA256 일치, LiteRT-LM 포함, 신규 의존성 없음 |
+| APK | ZIP CRC·중복 엔트리·16KiB ZIP/ELF 정렬·서명·패키지/버전·비디버그 확인 통과 |
+| 앱 ID / 서명 | `com.lilac.anime.enhanced`, 기존 인증서 SHA256 `62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5` |
+| 업데이트 | code51/52→53 메타데이터/인증서 호환. 실제 기기 설치 미검증 |
+| 실기기/에뮬레이터 | ADB0대, /dev/kvm 없음. 실제 재생·PiP·시스템 UI/성능·설치 테스트 미검증 |
+
+실행 명령:
+
+```bash
+python /workspace/build-tools/run_lycoris_v2_gradle.py --no-parallel --max-workers=1 -Pkotlin.compiler.execution.strategy=in-process -Porg.gradle.java.installations.paths=/workspace/build-tools/jdk-21.0.13+9 -I /workspace/lycoris-v2-work/tools/visual_qa/export-classpath.init.gradle :app:testDebugUnitTest :app:assembleDebug :app:assembleEnhanced :app:lintEnhanced :app:exportLycorisPreviewClasspath
+python tools/stage12/verify.py --apk /workspace/artifacts/lycoris-stage12-preview2/Lycoris-1.4.2-preview.2-arm64.apk --baseline-apk /workspace/artifacts/lycoris-moeni-preview/Lycoris-1.4.2-preview.1-Moeni-arm64.apk --source-commit e2caa16d516a60de1144827ca5cc1bcf6c8cfcc9 --out /workspace/build-logs/stage12/verification.json
+git diff --check
+```
+
+Gradle `BUILD SUCCESSFUL in 9m`. 일부 기존 API 사용 중단/nullable 경고가 있으며 실패를 숨기기 위한 강제 옵션은 추가하지 않았습니다. 신규 UI 명명 경고는 기능·빌드를 차단하지 않지만 후속 정리 대상입니다. 문자열/fixture 테스트는 실제 사이트 데이터의 완전한 정확성이나 번역·영상 품질을 보증하지 않습니다.
+
+### APK 증빙
+
+- Android 빌드 소스: [`e2caa16d516a60de1144827ca5cc1bcf6c8cfcc9`](https://github.com/lIlIllIIlIlIIlIIllI/private-builds/commit/e2caa16d516a60de1144827ca5cc1bcf6c8cfcc9)
+- 파일: `Lycoris-1.4.2-preview.2-arm64.apk`
+- 크기: **111,167,916 bytes / 106.02 MiB** (Preview.1 대비 +114,688 bytes)
+- SHA256: `1330f1d54acafde1d1c189d69af00aef754db3c2cd968a0b9f3f311ac279a963`
+- 버전: **1.4.2-preview.2 / 53**, ARM64, GGUF 기본, LiteRT 기존 opt-in OFF 유지. 모델/QNN 바이너리/키 파일 새 포함 없음.
+- 전체 자동 증빙: [lycoris-stage12.json](verification/lycoris-stage12.json)
+
+### 최종 수정 경로
+
+- `android/app/build.gradle.kts`
+- `android/app/src/debug/kotlin/com/lilac/anime/ui/preview/Stage12Previews.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossIdentityVerifier.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossSiteDiscovery.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossSiteHtmlBrowse.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossSitePolicy.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossSiteScreens.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/crosssite/CrossSiteStore.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/smart/RecommendationPolicy.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/smart/RecommendationScreens.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/detail/DetailScreen.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/home/ContinueWatchingRail.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/home/HomeScreen.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/home/WatchHistoryScreen.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/navigation/AppNavigation.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/search/LibraryScreen.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/ui/settings/SettingsScreen.kt`
+- `android/app/src/main/kotlin/com/lilac/anime/viewmodel/AnimeViewModel.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossIdentityVerifierTest.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossSiteCompatibilityTest.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossSiteDiscoveryTest.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossSiteHtmlBrowseTest.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossSitePolicyTest.kt`
+- `android/app/src/test/kotlin/com/lilac/anime/crosssite/CrossSiteStoreTest.kt`
+- `docs/lycoris/STAGE12_CROSS_SITE_LIBRARY_REPORT.md`
+- `tools/visual_qa/previews.json`
+- `tools/stage12/verify.py`, `tools/stage12/verify_publication.py`, `tools/stage12/VerifyPublicUpdate.java`: APK/원본 보호·공개 배포·실제 앱 업데이트 정책 재검증 도구
+- `docs/lycoris/design-v3-stage12/`: 실제 Compose PNG8개와 갤러리
+- `docs/lycoris/verification/lycoris-stage12.json`: 최종 자동 검증 증빙
+
+공개 배포·업데이트 경로의 실제 검증은 게시 후 별도 영수증으로 추가합니다. 이 문서 단계에서는 성공을 미리 판정하지 않습니다.
