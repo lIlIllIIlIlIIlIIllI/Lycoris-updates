@@ -1,0 +1,23 @@
+name: Publish verified Moeni preview APK
+on:
+  push:
+    branches: [moeni-preview-delivery]
+    paths: ['moeni-preview/**', '.github/workflows/moeni-preview.yml', 'distribution/publish-moeni.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-moeni-preview-code52
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'lIlIllIIlIlIIlIIllI/Lycoris-updates' && github.ref == 'refs/heads/moeni-preview-delivery'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify signed APK, publish new pre-release and advance requested device update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 distribution/publish-moeni.py
