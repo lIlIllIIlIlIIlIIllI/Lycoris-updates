@@ -1,0 +1,40 @@
+{
+  "source_commit": "7e5193b5b82279a93b3584ee25bc49da14500043",
+  "version_name": "1.4.2-preview.3",
+  "version_code": 54,
+  "application_id": "com.lilac.anime.enhanced",
+  "namespace": "com.lilac.anime",
+  "apk": "Lycoris-1.4.2-preview.3-arm64.apk",
+  "bytes": 111184300,
+  "sha256": "3d7adbd9fd0e860d4964b1dcef7111bd6a0efdfb262817a6e03240009f7884ea",
+  "signer_sha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "jvm": {
+    "tests": 914,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Warning": 254,
+    "Hint": 20
+  },
+  "gguf_default": true,
+  "litert_default": "OFF (existing opt-in preserved)",
+  "device_execution": "UNVERIFIED",
+  "source_ci": {
+    "conclusion": "success",
+    "headSha": "7e5193b5b82279a93b3584ee25bc49da14500043",
+    "status": "completed",
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/43362068232"
+  },
+  "compose": {
+    "rendered": 8,
+    "type": "Layoutlib production composables with static fixture data",
+    "render_warnings": 0,
+    "earlier_parallel_slow_render_warnings": 2,
+    "android_screenshots": false,
+    "gallery": "docs/lycoris/design-v3-stage12-moeni/README.md",
+    "unchanged_pixels_vs_previous_ui": 8
+  },
+  "apk_delta_from_preview2_bytes": 16384
+}

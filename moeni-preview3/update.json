@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v1.4.2-preview.3",
+  "versionName": "1.4.2-preview.3",
+  "versionCode": 54,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.3/Lycoris-1.4.2-preview.3-arm64.apk",
+    "bytes": 111184300,
+    "sha256": "3d7adbd9fd0e860d4964b1dcef7111bd6a0efdfb262817a6e03240009f7884ea"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.3",
+  "notes": "모에니 목록·검색·찜 정보·월~일 편성표와 사이트 전환 경합을 수정했습니다. 실제 공개 API를 앱 클라이언트/파서로 조회해 전체1694개·홈12개·주간12개/7일을 확인했습니다. 이전 필터를 모에니에 적용하지 않고 분기 모드는 주간으로 전환합니다. 정상 캐시·원본 찜 ID·통합 찜 정책·기존 AI/플레이어/다운로드·설정·서명을 유지합니다. 보관함에서 모에니 찜 작품 정보를 복구할 수 있습니다. 모에니는 기존 외부 브라우저 시청 방식입니다. JVM914개 및 빌드 통과, 실제 Android 설치/기기 통신/터치/성능은 미검증입니다. 기존 정식1.4.1과 Preview.1·Preview.2는 보존합니다.",
+  "buildCommit": "7e5193b5b82279a93b3584ee25bc49da14500043"
+}
