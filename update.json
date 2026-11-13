@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v1.4.2-preview.2",
-  "versionName": "1.4.2-preview.2",
-  "versionCode": 53,
+  "tag": "v1.4.2-preview.3",
+  "versionName": "1.4.2-preview.3",
+  "versionCode": 54,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.2/Lycoris-1.4.2-preview.2-arm64.apk",
-    "bytes": 111167916,
-    "sha256": "1330f1d54acafde1d1c189d69af00aef754db3c2cd968a0b9f3f311ac279a963"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.3/Lycoris-1.4.2-preview.3-arm64.apk",
+    "bytes": 111184300,
+    "sha256": "3d7adbd9fd0e860d4964b1dcef7111bd6a0efdfb262817a6e03240009f7884ea"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.2",
-  "notes": "사이트 간 통합 찜·시청 기록과 작품 연결 관리를 추가했습니다. 동일 작품은 검증된 ID·시즌·형식 근거 또는 직접 확인으로 연결합니다. 다른 사이트의 실제 회차 후보를 확인해 이동하며 재생 위치를 복사하지 않습니다. 원본 찜·회차 키·기록·통계·다운로드·모델·설정을 보존합니다. 통합 숨김·해제는 별도 상태이며 설정에서 복원할 수 있습니다. 신규 연결·추가 시각은 기기 로컬 전용입니다. GGUF 기본·LiteRT 실험 OFF 유지. 실제 Android 설치·사이트 간 재생·PiP·성능은 미검증이고 공식 AniList 조회는 개발 환경403입니다. 기존 정식1.4.1과 Preview.1은 유지합니다.",
-  "buildCommit": "e2caa16d516a60de1144827ca5cc1bcf6c8cfcc9"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.3",
+  "notes": "모에니 목록·검색·찜 정보·월~일 편성표와 사이트 전환 경합을 수정했습니다. 실제 공개 API를 앱 클라이언트/파서로 조회해 전체1694개·홈12개·주간12개/7일을 확인했습니다. 이전 필터를 모에니에 적용하지 않고 분기 모드는 주간으로 전환합니다. 정상 캐시·원본 찜 ID·통합 찜 정책·기존 AI/플레이어/다운로드·설정·서명을 유지합니다. 보관함에서 모에니 찜 작품 정보를 복구할 수 있습니다. 모에니는 기존 외부 브라우저 시청 방식입니다. JVM914개 및 빌드 통과, 실제 Android 설치/기기 통신/터치/성능은 미검증입니다. 기존 정식1.4.1과 Preview.1·Preview.2는 보존합니다.",
+  "buildCommit": "7e5193b5b82279a93b3584ee25bc49da14500043"
 }
