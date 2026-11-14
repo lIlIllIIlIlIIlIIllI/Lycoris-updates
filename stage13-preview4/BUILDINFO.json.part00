@@ -1,0 +1,857 @@
+{
+  "source_commit": "2413e9d933c5de5a3c2194c9db1aec1c8a72a439",
+  "branch": "lycoris-stage13-subtitle-providers",
+  "baseline_commit": "3bf5288ff9e0af3983743a908cc38418b6d32a99",
+  "version_name": "1.4.2-preview.4",
+  "version_code": 55,
+  "application_id": "com.lilac.anime.enhanced",
+  "namespace": "com.lilac.anime",
+  "tests": {
+    "tests": 1013,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suite_count": 114,
+  "suites": [
+    {
+      "name": "com.lilac.anime.crosssite.CrossSitePolicyTest",
+      "tests": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.search.TitleSearchTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.search.DownloadBulkControlsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.Ohli24NetTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.online.OnlineSubtitleFilesTest",
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.SubtitleDisplayDeliveryTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.Stage10ProviderDefaultsTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.update.EnhancedUpdatePolicyTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.LocalInvalidOutputCheckpointTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.settings.AiPresentationTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.crosssite.CrossSiteDiscoveryTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.RecommendationPolicyTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.EpisodeUpdatePolicyTest",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.GgufInspectorTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.home.HomePresentationTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.theme.DesignPreferencesTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.TranslatedSubtitlePresentationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.AiAccelerationPolicyTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.SubtitleTranslationPolicyTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.offline.OfflineAssetManifestTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.dependencies.TranslationConcurrencyContractTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.LiteRtModelStoreTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.AnimenosubSessionPolicyTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.MoeniRecoveryTest",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.NativeRuntimeBindingTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.LiteRtWorkerCloseTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.crosssite.CrossSiteStoreTest",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.RuntimePackPublisherTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.crosssite.CrossSiteCompatibilityTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.SmartDataContractTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalBackendPolicyTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.title.KoreanTitlePolicyTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.NextEpisodePreparationTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalAiExecutionPolicyTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.theme.MotionPreferencesTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.layout.ContentLayoutPolicyTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.SourceAdapterFixTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.startup.AiWorkerStartupTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.detail.EpisodePresentationPolicyTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.update.PublicUpdatePolicyTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.AnimeParadiseParserTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.online.SubtitleProviderTest",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.offline.DownloadResumeTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.CrossSiteSubtitlePolicyTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.theme.LycorisContrastTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.LocalModelHubTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.crosssite.CrossIdentityVerifierTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.browse.ReAnimeBrowseControllerTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.OrderedAiMessagesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.RuntimeRestartPrefetchTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.Stage10LocalCueIntegrationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.crosssite.CrossSiteHtmlBrowseTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.title.KoreanTitleIndexTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.layout.WindowLayoutPolicyTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.HyMtSubtitlePromptTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.update.UpdateNetworkCancellationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationSceneContextTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalSubtitlePromptTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationCheckpointStoreTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.viewmodel.MoeniSourceTransitionTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.FileInspectionCacheTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.LinkaniNetworkPolicyTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.settings.AiRuntimeDiagnosticsTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalSubtitleOutputTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.ExperimentalAiModelTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.SubtitleTranslationCancellationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.sync.SubtitleAlignmentServiceTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalSubtitleGenerationTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.CrossSiteKoreanSubtitlesTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.schedule.ParadiseTimetableTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.PlaybackInteractionPolicyTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.CancellableInferenceTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.home.HistoryDisplayTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.schedule.TimetableTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.RealtimeCheckpointIntegrationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationCheckpointRunTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationCheckpointFileTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.search.DownloadPresentationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.PublicAnimeReferencesTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.components.DisplayLabelsTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.MiruroTransportTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.PackagedAiProviderTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.SubtitleModeSelectionTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.update.PublicUpdateDownloadTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.QwenThinkingControlTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationHttpClientTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.NextPreparationReuseTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LiteRtOptInPersistenceTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.theme.GlassReadabilityTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationRetryPolicyTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.home.SourceHistoryPolicyTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.update.UpdatePresentationTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.SubtitleDisplayStyleTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.dependencies.DataStoreUpgradeCompatibilityTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ui.theme.CinematicVisualPolicyTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.MoeniClientTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.SubtitleRendererExplanationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.PublicSourcePosterTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalAiTuningProfilesTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationProgressPulseTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.ViewingPolicyTest",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.TranslationBatchExecutorTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.SeekPreviewPolicyTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.AiEngineAttemptsTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.smart.RecommendationCatalogPolicyTest",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.player.OwnedPlaybackActionTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.online.OnlineSubtitleIntegrationTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LocalAiModelLoadMemoTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.Stage9AndroidPreferencesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.ai.AcceleratorHealthTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.subtitle.translation.localai.LiteRtExecutionGateTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.core.settings.LatestSettingsWriterTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.dependencies.LibraryTlsDownloadContractTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.lilac.anime.data.MiruroSitePolicyTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": {
+    "Warning": 257,
+    "Hint": 20
+  },
+  "apk_bytes": 111249836,
+  "apk_sha256": "3caa888f5502ab45e2edb0a967dda92ec4abdf4f5ee9c6b49342072073c3b6d9",
+  "certificate_sha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "previous_apk_bytes": 111184300,
+  "apk_delta_bytes": 65536,
+  "native_sha256": {
+    "lib/arm64-v8a/libandroidx.graphics.path.so": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+    "lib/arm64-v8a/libass.so": "f13e8a925ddaa73074105f9af89123b2206edbe4b502d748a6217a261dc62df4",
+    "lib/arm64-v8a/libasskt.so": "d7d221f40dbb94371f23b8a3c69995424bb6f505fe81bff6bf916289a1db487c",
+    "lib/arm64-v8a/libavcodec.so": "2048ef964b3f7de520b0515db645923d9548fcd656b3d7b0732bbe5822ccb3a3",
+    "lib/arm64-v8a/libavdevice.so": "20f8d19d422b43e0a91b1dbe8f7b46558277aaab08e2971cc2a19238d2fc9a3d",
+    "lib/arm64-v8a/libavfilter.so": "1234199006dd10f73b92e7f7b10213530cf314dd3dd5bcdcf5f8527d4c27073a",
+    "lib/arm64-v8a/libavformat.so": "4edf68d3a0008840e516992380466ff7ee2ec926a56aff07713fdea4025492a7",
+    "lib/arm64-v8a/libavutil.so": "26a08d67f466edd3917280de7938fe373503ae94f59a86e377ce61de3ebb249b",
+    "lib/arm64-v8a/libc++_shared.so": "c4c2fe5cbcb1fba0003a31fc7ab29a9bb12df6cc187ec45a806462540e83d93b",
+    "lib/arm64-v8a/libdatastore_shared_counter.so": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+    "lib/arm64-v8a/liblilac_whisper.so": "43b9029f7c9cb95fe0dcb6be69efb107381c3d6e3cf23444968b341bac9c95ae",
+    "lib/arm64-v8a/liblitertlm_jni.so": "0954df5b188f647fe79f8f55ab130521e314e080cfd8c23004f3383aed1710da",
+    "lib/arm64-v8a/libmpv.so": "0184efeba540fcb8ebfaa759462204d940c7cf7f8a589774389e4005bfa0a951",
+    "lib/arm64-v8a/libonnxruntime.so": "999ecfdb5b5a13e4097487773b6d71ce8a075408a237daab072e8f5e817bd78e",
+    "lib/arm64-v8a/libonnxruntime4j_jni.so": "5614bd018cca9031c4dbcfc2a3bece42fae52861a92ff09c4bd2491bd93ac758",
+    "lib/arm64-v8a/libplayer.so": "ce2fb6df55e6e995f446ac378ecbfa2aac2538b76bad67e19e789565cf96b3a3",
+    "lib/arm64-v8a/libswresample.so": "a18b0a5a556f74ba2fa61ee60cecccfcbd6b746f9cb0088b05534f3feb17678d",
+    "lib/arm64-v8a/libswscale.so": "6707ce92803d331ce811cb65f752bb7441ba4396dbc71ecd284792fe7ec9ffe6",
+    "lib/arm64-v8a/libtranslate_jni.so": "35b3d0366291347e3f25e80e809ee398d716aea49cd03278007fedd526a1496f"
+  },
+  "unchanged_native_libraries": 19,
+  "unchanged_protected_files": 120,
+  "unchanged_baseline_test_files": 117,
+  "effect_and_surface_signatures_unchanged": true,
+  "gguf_default": true,
+  "litert_default": "off",
+  "zip_crc_and_16k_zip_alignment": "PASS",
+  "authenticated_provider_search_download": "UNVERIFIED: user keys unavailable",
+  "actual_android_install_update_playback": "UNVERIFIED",
+  "subtitlecenter": "DEFERRED: public API/terms not verified",
+  "ajatt": "DEFERRED: file licenses not verified"
+}
