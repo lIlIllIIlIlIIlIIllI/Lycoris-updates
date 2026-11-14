@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v1.4.2-preview.3",
-  "versionName": "1.4.2-preview.3",
-  "versionCode": 54,
+  "tag": "v1.4.2-preview.4",
+  "versionName": "1.4.2-preview.4",
+  "versionCode": 55,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.3/Lycoris-1.4.2-preview.3-arm64.apk",
-    "bytes": 111184300,
-    "sha256": "3d7adbd9fd0e860d4964b1dcef7111bd6a0efdfb262817a6e03240009f7884ea"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.4/Lycoris-1.4.2-preview.4-arm64.apk",
+    "bytes": 111249836,
+    "sha256": "3caa888f5502ab45e2edb0a967dda92ec4abdf4f5ee9c6b49342072073c3b6d9"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.3",
-  "notes": "모에니 목록·검색·찜 정보·월~일 편성표와 사이트 전환 경합을 수정했습니다. 실제 공개 API를 앱 클라이언트/파서로 조회해 전체1694개·홈12개·주간12개/7일을 확인했습니다. 이전 필터를 모에니에 적용하지 않고 분기 모드는 주간으로 전환합니다. 정상 캐시·원본 찜 ID·통합 찜 정책·기존 AI/플레이어/다운로드·설정·서명을 유지합니다. 보관함에서 모에니 찜 작품 정보를 복구할 수 있습니다. 모에니는 기존 외부 브라우저 시청 방식입니다. JVM914개 및 빌드 통과, 실제 Android 설치/기기 통신/터치/성능은 미검증입니다. 기존 정식1.4.1과 Preview.1·Preview.2는 보존합니다.",
-  "buildCommit": "7e5193b5b82279a93b3584ee25bc49da14500043"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.4",
+  "notes": "사이트 연결 수정과 온라인 자막 SubDL·SubSource 선택형 통합을 포함합니다. 한국어 기본 검색, 일본어·영어 원문 선택과 기존 AI 번역, 안전한 ZIP·인코딩 검사, 파일별 적용 승인·저장·미리보기·삭제를 추가했습니다. 두 서비스는 본인 API 키가 필요하며 인증된 실서비스 검색·다운로드는 미검증입니다. SubtitleCenter·AJATT 자동 연동은 API/파일별 이용 조건 확인 전 보류합니다. ohli24.net 현재 사이트·RE:Anime .cz 이동·Linkani 메타데이터·검증된 Wikidata 제목 대체·포스터 대체를 포함합니다. Miruro API403은 미해결이며 모에니는 외부 브라우저 시청입니다. JVM1013개, Debug/Enhanced 빌드·lint 오류0 및 Compose9개 통과. 실제 Android 설치·재생·AI 출력·성능은 미검증입니다. 기존 GGUF 기본값·LiteRT 선택형·모델·API 키·기록·다운로드·앱 ID·동일 서명 유지. 기존 Release와 정식1.4.1 Latest를 보존합니다.",
+  "buildCommit": "2413e9d933c5de5a3c2194c9db1aec1c8a72a439"
 }
