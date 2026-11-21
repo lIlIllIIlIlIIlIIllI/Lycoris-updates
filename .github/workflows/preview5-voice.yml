@@ -1,0 +1,23 @@
+name: Publish verified Preview.5 voice subtitle sync preview
+on:
+  push:
+    branches: [stage13-voice-preview5]
+    paths: ['stage13-preview5/**', '.github/workflows/preview5-voice.yml', 'distribution/publish-preview5.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-preview-code56
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'lIlIllIIlIlIIlIIllI/Lycoris-updates' && github.ref == 'refs/heads/stage13-voice-preview5'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify signed APK, publish new pre-release and advance requested device update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 distribution/publish-preview5.py

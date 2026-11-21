@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "applicationId": "com.lilac.anime.enhanced",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "tag": "v1.4.2-preview.5",
+  "versionName": "1.4.2-preview.5",
+  "versionCode": 56,
+  "minSdk": 26,
+  "apk": {
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.5/Lycoris-1.4.2-preview.5-arm64.apk",
+    "bytes": 111282604,
+    "sha256": "4a0b38eafbc476621a4be0aa06a6953357e2760b672b6586e46ced30c9528232"
+  },
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.5",
+  "notes": "홈 회차 목록, 앱을 새로 연 직후 이어보기, 다운로드 영상의 Whisper 일본어 음성 기반 자막 싱크, 태블릿 자막 패널 크기 문제를 개선했습니다.",
+  "buildCommit": "4312bd989fab55604eabfd2e6781539387274f50"
+}

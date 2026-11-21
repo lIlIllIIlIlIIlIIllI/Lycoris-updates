@@ -1,0 +1,45 @@
+{
+  "buildCommit": "4312bd989fab55604eabfd2e6781539387274f50",
+  "versionName": "1.4.2-preview.5",
+  "versionCode": 56,
+  "applicationId": "com.lilac.anime.enhanced",
+  "abi": "arm64-v8a",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "bytes": 111282604,
+  "sha256": "4a0b38eafbc476621a4be0aa06a6953357e2760b672b6586e46ced30c9528232",
+  "previousVersion": "1.4.2-preview.4",
+  "previousApkSha256": "3caa888f5502ab45e2edb0a967dda92ec4abdf4f5ee9c6b49342072073c3b6d9",
+  "zipCrc": "pass",
+  "zipAlignment": "16 KiB",
+  "jvm": {
+    "tests": 1020,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "suiteCount": 116,
+  "lint": {
+    "Warning": 260,
+    "Hint": 20
+  },
+  "nativeLibraryCount": 19,
+  "changedNativeLibraries": [],
+  "ci": {
+    "conclusion": "success",
+    "headSha": "4312bd989fab55604eabfd2e6781539387274f50",
+    "status": "completed",
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/44907234943"
+  },
+  "tabletConfirmation": {
+    "source": "PC validation report",
+    "configuration": "landscape tablet emulator",
+    "fixture": "216-second synthetic Japanese video",
+    "offsetMs": -2400,
+    "previewPosition": "00:29",
+    "subtitlePanelOpened": true,
+    "subtitleTextVisible": true,
+    "applyPassed": true,
+    "restorePassed": true
+  },
+  "publicDistribution": "Release workflow will verify the anonymous APK before advancing code56"
+}
