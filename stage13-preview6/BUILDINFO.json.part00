@@ -1,0 +1,48 @@
+{
+  "buildCommit": "8b585f4705625be497242a78c89cd8ed6a509655",
+  "versionName": "1.4.2-preview.6",
+  "versionCode": 57,
+  "applicationId": "com.lilac.anime.enhanced",
+  "abi": "arm64-v8a",
+  "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
+  "bytes": 111298988,
+  "sha256": "d3d085d01ea80b89eea9f2af3baaf9a060d98c5e23e6601aac92336af429c970",
+  "previousVersion": "1.4.2-preview.5",
+  "previousApkSha256": "4a0b38eafbc476621a4be0aa06a6953357e2760b672b6586e46ced30c9528232",
+  "zipCrc": "pass",
+  "zipAlignment": "16 KiB",
+  "jvm": {
+    "tests": 1026,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "suiteCount": 120,
+  "lint": {
+    "Warning": 260,
+    "Hint": 20
+  },
+  "nativeLibraryCount": 19,
+  "changedNativeLibraries": [],
+  "ci": {
+    "conclusion": "success",
+    "headSha": "8b585f4705625be497242a78c89cd8ed6a509655",
+    "status": "completed",
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/private-builds/actions/runs/44913434542"
+  },
+  "publicDistribution": "Release workflow will verify the anonymous APK before advancing code57",
+  "pcValidation": {
+    "source": "PC validation report for feature commits",
+    "relatedJvmTests": 134,
+    "debugAndEnhancedBuild": "pass",
+    "emulatorChecks": [
+      "Korean/Japanese/English subtitle selection",
+      "Whisper generation and attachment",
+      "RE:Anime and Animenosub ranking detail and preserved home ordering"
+    ],
+    "unverified": [
+      "Linkani and Miruro live ranking",
+      "new Ani24 popularity sort"
+    ]
+  }
+}
