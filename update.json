@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v1.4.2-preview.4",
-  "versionName": "1.4.2-preview.4",
-  "versionCode": 55,
+  "tag": "v1.4.2-preview.5",
+  "versionName": "1.4.2-preview.5",
+  "versionCode": 56,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.4/Lycoris-1.4.2-preview.4-arm64.apk",
-    "bytes": 111249836,
-    "sha256": "3caa888f5502ab45e2edb0a967dda92ec4abdf4f5ee9c6b49342072073c3b6d9"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.2-preview.5/Lycoris-1.4.2-preview.5-arm64.apk",
+    "bytes": 111282604,
+    "sha256": "4a0b38eafbc476621a4be0aa06a6953357e2760b672b6586e46ced30c9528232"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.4",
-  "notes": "사이트 연결 수정과 온라인 자막 SubDL·SubSource 선택형 통합을 포함합니다. 한국어 기본 검색, 일본어·영어 원문 선택과 기존 AI 번역, 안전한 ZIP·인코딩 검사, 파일별 적용 승인·저장·미리보기·삭제를 추가했습니다. 두 서비스는 본인 API 키가 필요하며 인증된 실서비스 검색·다운로드는 미검증입니다. SubtitleCenter·AJATT 자동 연동은 API/파일별 이용 조건 확인 전 보류합니다. ohli24.net 현재 사이트·RE:Anime .cz 이동·Linkani 메타데이터·검증된 Wikidata 제목 대체·포스터 대체를 포함합니다. Miruro API403은 미해결이며 모에니는 외부 브라우저 시청입니다. JVM1013개, Debug/Enhanced 빌드·lint 오류0 및 Compose9개 통과. 실제 Android 설치·재생·AI 출력·성능은 미검증입니다. 기존 GGUF 기본값·LiteRT 선택형·모델·API 키·기록·다운로드·앱 ID·동일 서명 유지. 기존 Release와 정식1.4.1 Latest를 보존합니다.",
-  "buildCommit": "2413e9d933c5de5a3c2194c9db1aec1c8a72a439"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.2-preview.5",
+  "notes": "홈 회차 목록, 앱을 새로 연 직후 이어보기, 다운로드 영상의 Whisper 일본어 음성 기반 자막 싱크, 태블릿 자막 패널 크기 문제를 개선했습니다.",
+  "buildCommit": "4312bd989fab55604eabfd2e6781539387274f50"
 }
