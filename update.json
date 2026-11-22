@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v1.4.3",
-  "versionName": "1.4.3",
-  "versionCode": 59,
+  "tag": "v1.4.4",
+  "versionName": "1.4.4",
+  "versionCode": 60,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.3/Lycoris-1.4.3-arm64.apk",
-    "bytes": 111354064,
-    "sha256": "d2301841a99eeafe3d1aec19652b38db06985adbbcdf94c001b1b95f0c96510d"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.4/Lycoris-1.4.4-arm64.apk",
+    "bytes": 111552139,
+    "sha256": "da912f6968507a7e59b6950fa8b9e445bd2706c27ff5ad62f1d1fbdb66357549"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.3",
-  "notes": "NVIDIA Build, LM Studio와 OpenAI 호환 서버의 자막 번역을 지원합니다. 확인된 작품의 포스터·배경·한국어 줄거리와 회차 썸네일을 보완합니다.",
-  "buildCommit": "46c09bd8fb1283e27a5909a390506a185f2bc3d5"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.4",
+  "notes": "자막 자동 선택 안내와 번역 진행률을 제공합니다. 구간별 음성 싱크 보정을 저장하고 복원할 수 있습니다. Jimaku 병기 자막의 중복 표시를 줄이고, 번역 제공자 오류 시 남은 줄을 대체 번역합니다. 홈 탐색과 영상 소스 설정을 분리했습니다.",
+  "buildCommit": "63e8c9eb900791c4206199436ef07eb64b367b01"
 }
