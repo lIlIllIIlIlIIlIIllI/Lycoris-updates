@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "applicationId": "com.lilac.anime.enhanced",
   "certificateSha256": "62823547a1b9e6e42619f336e5d4a7dfe408a6de81045773a72b087305cebba5",
-  "tag": "v1.4.4-preview.2",
-  "versionName": "1.4.4-preview.2",
-  "versionCode": 62,
+  "tag": "v1.4.4-preview.3",
+  "versionName": "1.4.4-preview.3",
+  "versionCode": 63,
   "minSdk": 26,
   "apk": {
-    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.4-preview.2/Lycoris-1.4.4-preview.2-arm64.apk",
-    "bytes": 111568523,
-    "sha256": "03be958b7e05389be11ccda4890439d6026ac82a1e5679147c752c8ded6333e3"
+    "url": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/download/v1.4.4-preview.3/Lycoris-1.4.4-preview.3-arm64.apk",
+    "bytes": 111584907,
+    "sha256": "456e927991fb247fb27926de3f4374476773482ea2b874d9d2dea51cf8a1dc72"
   },
-  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.4-preview.2",
-  "notes": "플레이어에서 화자 이름표와 효과음 표기를 숨길 수 있습니다. 실패한 자막은 2분 뒤, 이후 5분마다 재시도하며 재생 위치가 가까워지면 별도로 다시 요청합니다. 음성 싱크 바로가기와 번역 자막 줄바꿈 수정이 포함됩니다.",
-  "buildCommit": "ee5856566f66a74e28a078dba905787d1bf97024"
+  "releaseUrl": "https://github.com/lIlIllIIlIlIIlIIllI/Lycoris-updates/releases/tag/v1.4.4-preview.3",
+  "notes": "한국어 자막 자동 선택에 Kairan과 Csora를 연결했습니다. RE:Anime 방영표에서 같은 회차를 자막 공개 시간에 한 번만 표시합니다. 음성 싱크 분석 중 번역이 비는 구간의 원문 표시와 번역 줄바꿈을 개선했습니다.",
+  "buildCommit": "7ccb002e567096c832df5771e6949c34cb83b548"
 }
